@@ -14,3 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\MailController;
 Route::get('/email', [MailController::class, 'sendEmail']);
+
+Route::view('profile', 'profile');
+
+Route::get('/profile/{lang}', function($lang) {
+    App::setlocale($lang);
+    return view('profile');
+});
