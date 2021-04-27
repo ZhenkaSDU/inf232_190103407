@@ -21,3 +21,8 @@ Route::get('/profile/{lang}', function($lang) {
     App::setlocale($lang);
     return view('profile');
 });
+
+
+use App\Http\Controllers\UserController;
+Route::get('users', [UserController::class, 'index']);
+
